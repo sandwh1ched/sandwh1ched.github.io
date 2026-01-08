@@ -28,7 +28,7 @@ function saveAssignments() {
     try {
         localStorage.setItem("assignments", JSON.stringify(assignments));
     } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : error;
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
         alert(`Error: ${errorMessage}`);
     }
 }
