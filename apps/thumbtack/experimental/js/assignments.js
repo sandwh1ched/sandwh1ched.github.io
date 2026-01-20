@@ -1,5 +1,3 @@
-/* Utility */
-
 /**
  * An assignment.
  */
@@ -8,7 +6,7 @@ class Assignment {
      * Creates a new `Assignment`.
      * @param {*} name the name of the assignment
      * @param {*} course the course it's from
-     * @param {*} progress progress represented as "x/y z" where x/y is a fraction, and z is a unit
+     * @param {*} progress progress represented as "x/y z" where x/y is a fraction, and z is a unit (e.g. "4/8 questions")
      * @param {*} worth the amount of points it's worth
      * @param {*} deadline the date by which this assignment is to be done
      */
@@ -33,23 +31,6 @@ function saveAssignments() {
     }
 }
 
-/* Example navbar; refactor to needs
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-*/
-
-/* ------- */
-
-
-
-/* Runtime */
-
 // Set up autosave before unloading the page.
 window.addEventListener("beforeunload", () => saveAssignments());
 
@@ -58,5 +39,3 @@ window.addEventListener("beforeunload", () => saveAssignments());
  * @type Assignment[]
  */
 let assignments = JSON.parse(localStorage.getItem("assignments"));
-
-/* ------- */
