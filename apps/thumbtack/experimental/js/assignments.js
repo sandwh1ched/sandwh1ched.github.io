@@ -106,3 +106,5 @@ window.addEventListener("beforeunload", () => saveAssignments());
  * @type Assignment[]
  */
 let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+
+synchronizeAndRender();
