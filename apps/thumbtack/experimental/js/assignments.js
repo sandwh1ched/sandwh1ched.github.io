@@ -31,6 +31,37 @@ function saveAssignments() {
     }
 }
 
+/**
+ * Synchronizes the `assignments` array with the DOM.
+ * Should be called after any changes to the array.
+ */
+function synchronizeAndRender() {
+    const container = document.getElementById("assignments");
+    container.innerHTML = "";
+
+    assignments.forEach((assignment, index) => {
+        const div = document.createElement("div");
+        const name = document.createElement("b");
+        const course = document.createElement("i");
+        const progress = document.createElement("span");
+        const worth = document.createElement("span");
+        const deadline = document.createElement("span");
+        div.id = "assignment" + index;
+        div.className = "assignment";
+        name.innerText = assignment.name;
+        course.innerText = assignment.course;
+        progress.innerText = assignment.progress;
+        worth.innerText = assignment.worth + " points";
+        deadline.innerText = "due on " + assignment.deadline;
+        div.append(name);
+        div.append(course);
+        div.append(progress);
+        div.append(worth);
+        div.append(deadline);
+        container.append(div);
+    });
+}
+
 // Set up autosave before unloading the page.
 window.addEventListener("beforeunload", () => saveAssignments());
 
