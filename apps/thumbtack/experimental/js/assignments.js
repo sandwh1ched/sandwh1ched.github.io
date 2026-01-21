@@ -46,6 +46,8 @@ function synchronizeAndRender() {
         const progress = document.createElement("span");
         const worth = document.createElement("span");
         const deadline = document.createElement("span");
+        const removeButton = document.createElement("button");
+        const editButton = document.createElement("button");
         div.id = "assignment" + index;
         div.className = "assignment";
         name.innerText = assignment.name;
@@ -53,11 +55,18 @@ function synchronizeAndRender() {
         progress.innerText = assignment.progress;
         worth.innerText = assignment.worth + " points";
         deadline.innerText = "due on " + assignment.deadline;
+        // TODO: Implement remove and edit functionality
+        removeButton.innerText = "Remove";
+        removeButton.className = "removeButton";
+        editButton.innerText = "Edit";
+        editButton.className = "editButton";
         div.append(name);
         div.append(course);
         div.append(progress);
         div.append(worth);
         div.append(deadline);
+        div.append(editButton);
+        div.append(removeButton);
         container.append(div);
     });
 }
