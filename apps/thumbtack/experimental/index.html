@@ -23,7 +23,23 @@
 
     <div id="assignments"></div>
 
+    <dialog id="newEditDialog">
+        <form id="newEditForm" method="dialog">
+            <span>New/Edit Assignment</span>
+            <input type="text" name="name" id="newEditName" placeholder="Name" required>
+            <input type="text" name="course" id="newEditCourse" placeholder="Course" required>
+            <input type="number" name="worth" id="newEditWorth" placeholder="Worth (points)" required>
+            <input type="text" name="progress" id="newEditProgress" placeholder="Progress (x/y units)" required>
+            <input type="date" name="deadline" id="newEditDeadline" required>
+
+            <button onclick="closeNewEditDialog()">Cancel</button>
+            <button type="submit">Confirm</button>
+        </form>
+    </dialog>
+    <button onclick="showNewEditDialog()">New...</button>
+
     <script src="js/assignments.js"></script>
+    <script src="js/newEditDialog.js"></script>
     <!-- <script src="js/navbar.js"></script> (no navbar functionality yet) -->
 </body>
 </html>
