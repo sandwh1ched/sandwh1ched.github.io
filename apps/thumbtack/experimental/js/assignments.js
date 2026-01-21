@@ -57,19 +57,24 @@ function synchronizeAndRender() {
         const deadline = document.createElement("span");
         const removeButton = document.createElement("button");
         const editButton = document.createElement("button");
+
         div.id = "assignment" + index;
         div.className = "assignment";
+
         name.innerText = assignment.name;
         course.innerText = assignment.course;
         progress.innerText = assignment.progress;
         worth.innerText = assignment.worth + " points";
         deadline.innerText = "due on " + assignment.deadline;
+
         removeButton.innerText = "Remove";
         removeButton.className = "removeButton";
         removeButton.onclick = () => deleteAssignment(div, index);
+
         editButton.innerText = "Edit";
         editButton.className = "editButton";
         editButton.onclick = () => editAssignment(index);
+
         div.append(name);
         div.append(course);
         div.append(progress);
