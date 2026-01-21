@@ -20,22 +20,10 @@ class Assignment {
 }
 
 /**
- * Saves the current assignment array to storage.
- */
-function saveAssignments() {
-    try {
-        localStorage.setItem("assignments", JSON.stringify(assignments));
-    } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : "Unknown error";
-        alert(`Error: ${errorMessage}`);
-    }
-}
-
-/**
  * Deletes an assignment.
  * @param {HTMLDivElement} assignmentElement The element of the assignment to remove.
  * @param {number} index The index of the assignment to remove.
- */
+*/
 function deleteAssignment(assignmentElement, index) {
     assignmentElement.remove();
     assignments.splice(index, 1);
@@ -45,7 +33,7 @@ function deleteAssignment(assignmentElement, index) {
 /**
  * Edit an assignment.
  * @param {number} _index The index of the assignment to edit.
- */
+*/
 function editAssignment(_index) {
     alert("Unimplemented, sorry :( It should work after I add the edit dialog.")
 }
@@ -55,11 +43,11 @@ function editAssignment(_index) {
  * Should be called after any changes to the array.
  * 
  * **Lead developer's note:** Could possibly be optimized in the future.
- */
+*/
 function synchronizeAndRender() {
     const container = document.getElementById("assignments");
     container.innerHTML = "";
-
+    
     assignments.forEach((assignment, index) => {
         const div = document.createElement("div");
         const name = document.createElement("b");
@@ -91,6 +79,18 @@ function synchronizeAndRender() {
         div.append(removeButton);
         container.append(div);
     });
+}
+
+/**
+ * Saves the current assignment array to storage.
+ */
+function saveAssignments() {
+    try {
+        localStorage.setItem("assignments", JSON.stringify(assignments));
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
+        alert(`Error: ${errorMessage}`);
+    }
 }
 
 // Set up autosave before unloading the page.
