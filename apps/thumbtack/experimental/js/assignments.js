@@ -4,11 +4,11 @@
 class Assignment {
     /**
      * Creates a new `Assignment`.
-     * @param {*} name the name of the assignment
-     * @param {*} course the course it's from
-     * @param {*} progress progress represented as "x/y z" where x/y is a fraction, and z is a unit (e.g. "4/8 questions")
-     * @param {*} worth the amount of points it's worth
-     * @param {*} deadline the date by which this assignment is to be done
+     * @param {*} name The name of the assignment.
+     * @param {*} course The course it's from.
+     * @param {*} progress Progress represented as "x/y z" where x/y is a fraction, and z is a unit (e.g. "4/8 questions").
+     * @param {*} worth The amount of points it's worth.
+     * @param {*} deadline The date by which this assignment is to be done.
      */
     constructor(name, course, progress, worth, deadline) {
         this.name = name;
