@@ -69,4 +69,4 @@ window.addEventListener("beforeunload", () => saveAssignments());
  * The assignments array.
  * @type Assignment[]
  */
-let assignments = JSON.parse(localStorage.getItem("assignments"));
+let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
