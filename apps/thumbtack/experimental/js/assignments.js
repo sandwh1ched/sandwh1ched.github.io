@@ -35,8 +35,7 @@ function saveAssignments() {
  * Synchronizes the `assignments` array with the DOM.
  * Should be called after any changes to the array.
  * 
- * **Developer's note:** Could possibly be optimized in the future by only updating changed elements.
- * I'm too dumb to do this though.
+ * **Lead developer's note:** Could possibly be optimized in the future.
  */
 function synchronizeAndRender() {
     const container = document.getElementById("assignments");
