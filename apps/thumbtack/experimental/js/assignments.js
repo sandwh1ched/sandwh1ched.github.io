@@ -32,6 +32,25 @@ function saveAssignments() {
 }
 
 /**
+ * Deletes an assignment.
+ * @param {HTMLDivElement} assignmentElement The element of the assignment to remove.
+ * @param {number} index The index of the assignment to remove.
+ */
+function deleteAssignment(assignmentElement, index) {
+    assignmentElement.remove();
+    assignments.splice(index, 1);
+    synchronizeAndRender();
+}
+
+/**
+ * Edit an assignment.
+ * @param {number} _index The index of the assignment to edit.
+ */
+function editAssignment(_index) {
+    alert("Unimplemented, sorry :( It should work after I add the edit dialog.")
+}
+
+/**
  * Synchronizes the `assignments` array with the DOM.
  * Should be called after any changes to the array.
  * 
@@ -57,11 +76,12 @@ function synchronizeAndRender() {
         progress.innerText = assignment.progress;
         worth.innerText = assignment.worth + " points";
         deadline.innerText = "due on " + assignment.deadline;
-        // TODO: Implement remove and edit functionality
         removeButton.innerText = "Remove";
         removeButton.className = "removeButton";
+        removeButton.onclick = () => deleteAssignment(div, index);
         editButton.innerText = "Edit";
         editButton.className = "editButton";
+        editButton.onclick = () => editAssignment(index);
         div.append(name);
         div.append(course);
         div.append(progress);
