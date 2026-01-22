@@ -3,14 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwistedHambone&mdash;Accessing experimental app</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Thumbtack&mdash;Under construction</title>
 </head>
 <body>
-    <h1>Accessing experimental app</h1>
-    <p>This app is currently under construction, and will likely not function correctly yet, if 
-        all! Do you really want to continue?
-    </p>
-    <button><a href="/apps/">Return</a></button>
-    <button><a href="/apps/thumbtack/experimental/" style="color: red;">Continue</a></button>
+    <!-- Example navbar, refactor to needs
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    </div>
+    -->
+
+    <div id="assignments"></div>
+
+    <dialog id="newEditDialog">
+        <form id="newEditForm" method="dialog">
+            <span>New/Edit Assignment</span>
+            <input type="text" name="name" id="newEditName" placeholder="Name" required>
+            <input type="text" name="course" id="newEditCourse" placeholder="Course" required>
+            <input type="number" name="worth" id="newEditWorth" placeholder="Worth (points)" required>
+            <input type="text" name="progress" id="newEditProgress" placeholder="Progress (x/y units)" required>
+            <input type="date" name="deadline" id="newEditDeadline" required>
+
+            <button onclick="closeNewEditDialog()">Cancel</button>
+            <button type="submit">Confirm</button>
+        </form>
+    </dialog>
+    <button onclick="showNewEditDialog()">New...</button>
+    <button onclick="saveAssignments()">Save</button>
+
+    <script src="js/assignments.js"></script>
+    <script src="js/newEditDialog.js"></script>
+    <!-- <script src="js/navbar.js"></script> (no navbar functionality yet) -->
 </body>
 </html>
