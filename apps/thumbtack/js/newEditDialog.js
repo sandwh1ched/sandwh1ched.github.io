@@ -13,6 +13,7 @@ assignmentForm.addEventListener("submit", (e) => {
         data.get("deadline")
     );
     assignments.push(assignment);
+    saveAssignments();
 
     synchronizeAndRender();
 
